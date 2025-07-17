@@ -14,6 +14,7 @@ phases:
       - echo Building the Next.js app...
       - npm run build
       - echo Moving build files to site directory...
+      - mkdir -p ../site/.next/static  # Create the site directory and subdirectories
       - cp -r .next/static ../site/.next/static
       - cp -r public/* ../site/
       - cp .next/BUILD_ID ../site/.next/BUILD_ID
