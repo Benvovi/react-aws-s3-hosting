@@ -12,7 +12,6 @@ phases:
   build:
     commands:
       - echo Building the Next.js app...
-      - cd frontend-app
       - npm run build
       - echo Moving build files to site directory...
       - cp -r .next/static ../site/.next/static
