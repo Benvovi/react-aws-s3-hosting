@@ -11,11 +11,14 @@ phases:
 
   build:
     commands:
-      - echo Building the React app...
+      - echo Building the Next.js app...
       - cd frontend-app
       - npm run build
       - echo Moving build files to site directory...
-      - cp -r dist/* ../site/
+      - cp -r .next/static ../site/.next/static
+      - cp -r public/* ../site/
+      - cp .next/BUILD_ID ../site/.next/BUILD_ID
+      - cp .next/server/pages/* ../site/
 
 artifacts:
   files:
