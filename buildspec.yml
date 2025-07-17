@@ -6,14 +6,18 @@ phases:
       nodejs: 20
     commands:
       - echo Installing dependencies...
+      - cd react-app
       - npm install
 
   build:
     commands:
       - echo Building the React app...
+      - cd react-app
       - npm run build
+      - echo Moving build files to site directory...
+      - cp -r dist/* ../site/
 
 artifacts:
   files:
     - '**/*'
-  base-directory: build
+  base-directory: site
